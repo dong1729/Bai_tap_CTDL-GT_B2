@@ -4,7 +4,7 @@
 > 
 > 👨‍💻 **Họ và tên:** Nguyễn Hòa Đông  
 > 📚 **Môn học:** Cấu trúc Dữ liệu và Giải thuật  
-> 📝 **Bài tập:** Về nhà số 1 (Đánh giá hàm, Vòng lặp & Đệ quy)
+> 📝 **Bài tập:** Về nhà số 2 (Đánh giá hàm, Vòng lặp & Đệ quy)
 
 ---
 
