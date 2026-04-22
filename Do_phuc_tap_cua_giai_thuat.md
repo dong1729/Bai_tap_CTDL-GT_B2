@@ -1,106 +1,105 @@
-# BÁO CÁO TÍNH ĐỘ PHỨC TẠP GIẢI THUẬT - BÀI TẬP VỀ NHÀ SỐ 1
+# 🚀 BÁO CÁO TÍNH ĐỘ PHỨC TẠP GIẢI THUẬT
 
-**Họ và tên:** Nguyễn Hòa Đông
-**Môn học:** Cấu trúc Dữ liệu và Giải thuật
-
----
-
-## 1. Khái niệm đánh giá:
-* **Độ phức tạp thời gian (Time Complexity):** Đánh giá số lượng phép toán/bước chạy theo kích thước đầu vào $n$.
-* **Độ phức tạp không gian (Space Complexity):** Đánh giá lượng bộ nhớ phát sinh (biến cục bộ, mảng, Call Stack) theo kích thước đầu vào $n$.
+> **THÔNG TIN SINH VIÊN**
+> 👨‍💻 **Họ và tên:** Nguyễn Hòa Đông  
+> 📚 **Môn học:** Cấu trúc Dữ liệu và Giải thuật  
+> 📝 **Bài tập:** Về nhà số 1 (Đánh giá hàm, Vòng lặp & Đệ quy)
 
 ---
 
-## 2. Phân tích chi tiết các hàm
+## 🎯 1. Khái Niệm Đánh Giá Cơ Bản
 
-### BÀI 1: TÍNH TỔNG HAI SỐ
+Để đo lường hiệu năng của các hàm, báo cáo sử dụng 2 tiêu chí cốt lõi:
+* ⏱️ **Độ phức tạp thời gian (Time Complexity):** Đánh giá số lượng phép toán/bước chạy theo kích thước đầu vào $n$.
+* 💾 **Độ phức tạp không gian (Space Complexity):** Đánh giá lượng bộ nhớ phát sinh (biến cục bộ, mảng, Call Stack) theo kích thước $n$.
+
+---
+
+## 🔍 2. Phân Tích Chi Tiết Các Hàm
+
+### 🟦 BÀI 1: TÍNH TỔNG HAI SỐ
 Hai hàm tính tổng đều chỉ thực hiện 1 phép toán số học duy nhất, không phụ thuộc vào độ lớn của dữ liệu đầu vào.
 
-**1. Hàm `TinhTongCoTraVe` (Hàm trả về kiểu int)**
-* **Thời gian:** $O(1)$ - Thực hiện trực tiếp phép `+` và gán kết quả trả về.
-* **Không gian:** $O(1)$ - Chỉ lưu một giá trị trả về tại bộ nhớ tạm.
-
-**2. Hàm `TinhTongKhongTraVe` (Hàm void dùng tham chiếu)**
-* **Thời gian:** $O(1)$ - Gán trực tiếp qua địa chỉ bộ nhớ.
-* **Không gian:** $O(1)$ - Không tốn thêm bộ nhớ vì thao tác trực tiếp trên biến truyền vào từ `main`.
-
----
-
-### BÀI 2: TÍNH GIAI THỪA $(n!)$
-
-**3. Hàm `GiaiThuaTraVeVongLap` (Hàm trả về, dùng vòng lặp)**
-* **Thời gian:** $O(n)$ - Có 1 vòng lặp `for` chạy đúng $n$ lần.
-* **Không gian:** $O(1)$ - Chỉ khởi tạo 1 biến `kq` và 1 biến đếm `chiSo`.
-
-**4. Hàm `GiaiThuaTraVeDeQuy` (Hàm trả về, đệ quy)**
-* **Thời gian:** $O(n)$ - Hàm gọi lại chính nó $n$ lần để chạm tới điểm dừng (Base case).
-* **Không gian:** $O(n)$ - Hệ thống phải cấp phát $n$ khung nhớ (Stack frame) trên Call Stack cho mỗi lần gọi hàm.
-
-**5. Hàm `GiaiThuaVoidVongLap` (Hàm void, dùng vòng lặp)**
-* **Thời gian:** $O(n)$ - Tương tự hàm số 3, vòng lặp chạy $n$ bước.
-* **Không gian:** $O(1)$ - Cập nhật trực tiếp vào biến tham chiếu, không tốn thêm bộ nhớ mảng.
-
-**6. Hàm `GiaiThuaVoidDeQuy` (Hàm void, đệ quy)**
-* **Thời gian:** $O(n)$ - Đệ quy sâu $n$ tầng.
-* **Không gian:** $O(n)$ - Tốn bộ nhớ Call Stack tỷ lệ thuận với độ sâu $n$.
+* **[1] Hàm `TinhTongCoTraVe` (Kiểu `int`)**
+  * ⏱️ **Time:** 🟢 `$O(1)$` *(Thực hiện trực tiếp phép `+` và trả về)*
+  * 💾 **Space:** 🟢 `$O(1)$`
+* **[2] Hàm `TinhTongKhongTraVe` (Kiểu `void` tham chiếu)**
+  * ⏱️ **Time:** 🟢 `$O(1)$` *(Gán trực tiếp qua địa chỉ bộ nhớ)*
+  * 💾 **Space:** 🟢 `$O(1)$`
 
 ---
 
-### BÀI 3: DÃY SỐ FIBONACCI $(F_n)$
+### 🟩 BÀI 2: TÍNH GIAI THỪA $(n!)$
 
-**7. Hàm `FibonacciTraVeVongLap` (Hàm trả về, dùng vòng lặp)**
-* **Thời gian:** $O(n)$ - Vòng lặp chạy từ $2$ đến $n$. Tại mỗi bước thực hiện phép cộng số học đơn giản.
-* **Không gian:** $O(1)$ - Thuật toán tối ưu chỉ sử dụng 3 biến (`a`, `b`, `hienTai`) thay vì tạo mảng độ dài $n$.
-
-**8. Hàm `FibonacciTraVeDeQuy` (Hàm trả về, đệ quy)**
-* **Thời gian:** $O(2^n)$ - Mỗi hàm tách ra thành 2 nhánh đệ quy, tạo thành một cây đệ quy nhị phân. Nhiều bài toán con bị tính lặp lại (Overlapping).
-* **Không gian:** $O(n)$ - Độ sâu tối đa của cây đệ quy trên Call Stack là $n$.
-
-**9. Hàm `FibonacciVoidVongLap` (Hàm void, dùng vòng lặp)**
-* **Thời gian:** $O(n)$ - Tối ưu tuyến tính, vòng lặp chạy $n$ lần.
-* **Không gian:** $O(1)$ - Không dùng mảng phụ.
-
-**10. Hàm `FibonacciVoidDeQuy` (Hàm void, đệ quy)**
-* **Thời gian:** $O(2^n)$ - Bùng nổ tổ hợp, hiệu năng rất kém với $n$ lớn.
-* **Không gian:** $O(n)$ - Tốn bộ nhớ Stack.
+* **[3] Hàm `GiaiThuaTraVeVongLap` (Trả về + Lặp)**
+  * ⏱️ **Time:** 🟡 `$O(n)$` *(Vòng lặp `for` chạy đúng $n$ lần)*
+  * 💾 **Space:** 🟢 `$O(1)$`
+* **[4] Hàm `GiaiThuaTraVeDeQuy` (Trả về + Đệ quy)**
+  * ⏱️ **Time:** 🟡 `$O(n)$` *(Gọi lại chính nó $n$ lần)*
+  * 💾 **Space:** 🔴 `$O(n)$` *(Tốn $n$ khung nhớ Stack - Dễ tràn bộ nhớ)*
+* **[5] Hàm `GiaiThuaVoidVongLap` (Void + Lặp)**
+  * ⏱️ **Time:** 🟡 `$O(n)$`
+  * 💾 **Space:** 🟢 `$O(1)$`
+* **[6] Hàm `GiaiThuaVoidDeQuy` (Void + Đệ quy)**
+  * ⏱️ **Time:** 🟡 `$O(n)$`
+  * 💾 **Space:** 🔴 `$O(n)$` *(Tốn bộ nhớ Call Stack)*
 
 ---
 
-### BÀI 4: SỐ CATALAN $(C_n)$
+### 🟨 BÀI 3: DÃY SỐ FIBONACCI $(F_n)$
 
-**11. Hàm `CatalanTraVeVongLap` (Hàm trả về, dùng vòng lặp)**
-* **Thời gian:** $O(n^2)$ - Hàm sử dụng 2 vòng lặp lồng nhau (vòng ngoài chạy $n$ lần, vòng trong chạy $i$ lần). Tổng số phép tính là tổng cấp số cộng từ $1$ đến $n$, tỷ lệ với $n^2$.
-* **Không gian:** $O(n)$ - Cần khởi tạo mảng `vector<long long>` kích thước $n+1$ để lưu các kết quả trung gian.
-
-**12. Hàm `CatalanTraVeDeQuy` (Hàm trả về, đệ quy)**
-* **Thời gian:** $O(4^n)$ *(giới hạn cận trên)* - Đệ quy kết hợp vòng lặp tạo ra sự phân nhánh đa chiều khổng lồ.
-* **Không gian:** $O(n)$ - Độ sâu của Call Stack.
-
-**13. Hàm `CatalanVoidVongLap` (Hàm void, dùng vòng lặp)**
-* **Thời gian:** $O(n^2)$ - Hai vòng lặp lồng nhau.
-* **Không gian:** $O(n)$ - Vẫn phải dùng mảng `vector` bên trong hàm để lưu trạng thái quy hoạch động.
-
-**14. Hàm `CatalanVoidDeQuy` (Hàm void, đệ quy)**
-* **Thời gian:** $O(4^n)$ - Không lưu lại kết quả trung gian nên phải tính lại toàn bộ các nhánh con.
-* **Không gian:** $O(n)$ - Độ sâu tối đa của đệ quy.
+* **[7] Hàm `FibonacciTraVeVongLap` (Trả về + Lặp)**
+  * ⏱️ **Time:** 🟡 `$O(n)$` *(Chạy tuyến tính)*
+  * 💾 **Space:** 🟢 `$O(1)$` *(Tối ưu, chỉ dùng 3 biến trạng thái)*
+* **[8] Hàm `FibonacciTraVeDeQuy` (Trả về + Đệ quy)**
+  * ⏱️ **Time:** 🔴 `$O(2^n)$` *(Cây đệ quy bùng nổ, tính lặp lại bài toán con)*
+  * 💾 **Space:** 🔴 `$O(n)$` 
+* **[9] Hàm `FibonacciVoidVongLap` (Void + Lặp)**
+  * ⏱️ **Time:** 🟡 `$O(n)$`
+  * 💾 **Space:** 🟢 `$O(1)$`
+* **[10] Hàm `FibonacciVoidDeQuy` (Void + Đệ quy)**
+  * ⏱️ **Time:** 🔴 `$O(2^n)$` *(Rất chậm với $n$ lớn)*
+  * 💾 **Space:** 🔴 `$O(n)$`
 
 ---
 
-## 3. Bảng Tổng Hợp Đánh Giá
+### 🟥 BÀI 4: SỐ CATALAN $(C_n)$
 
-| STT | Bài toán | Kiểu hàm | Kỹ thuật | Time Complexity | Space Complexity | Đánh giá hiệu năng |
-| :-- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Tính Tổng | Trả về | Phép tính cơ bản | $O(1)$ | $O(1)$ | Tối ưu |
-| 2 | Tính Tổng | Void | Phép tính cơ bản | $O(1)$ | $O(1)$ | Tối ưu |
-| 3 | Giai Thừa | Trả về | Vòng lặp | $O(n)$ | $O(1)$ | Tối ưu |
-| 4 | Giai Thừa | Trả về | Đệ quy | $O(n)$ | $O(n)$ | Cảnh báo tràn Stack |
-| 5 | Giai Thừa | Void | Vòng lặp | $O(n)$ | $O(1)$ | Tối ưu |
-| 6 | Giai Thừa | Void | Đệ quy | $O(n)$ | $O(n)$ | Cảnh báo tràn Stack |
-| 7 | Fibonacci | Trả về | Vòng lặp | $O(n)$ | $O(1)$ | Tối ưu |
-| 8 | Fibonacci | Trả về | Đệ quy | $O(2^n)$ | $O(n)$ | Quá chậm |
-| 9 | Fibonacci | Void | Vòng lặp | $O(n)$ | $O(1)$ | Tối ưu |
-| 10 | Fibonacci | Void | Đệ quy | $O(2^n)$ | $O(n)$ | Quá chậm |
-| 11 | Catalan | Trả về | Vòng lặp | $O(n^2)$ | $O(n)$ | Chấp nhận được |
-| 12 | Catalan | Trả về | Đệ quy | $O(4^n)$ | $O(n)$ | Rất chậm |
-| 13 | Catalan | Void | Vòng lặp | $O(n^2)$ | $O(n)$ | Chấp nhận được |
-| 14 | Catalan | Void | Đệ quy | $O(4^n)$ | $O(n)$ | Rất chậm |
+* **[11] Hàm `CatalanTraVeVongLap` (Trả về + Lặp)**
+  * ⏱️ **Time:** 🔴 `$O(n^2)$` *(Sử dụng 2 vòng lặp lồng nhau)*
+  * 💾 **Space:** 🔴 `$O(n)$` *(Cần mảng `vector` để lưu mảng trạng thái DP)*
+* **[12] Hàm `CatalanTraVeDeQuy` (Trả về + Đệ quy)**
+  * ⏱️ **Time:** 💀 `$O(4^n)$` *(Cực kỳ chậm, đa phân nhánh)*
+  * 💾 **Space:** 🔴 `$O(n)$`
+* **[13] Hàm `CatalanVoidVongLap` (Void + Lặp)**
+  * ⏱️ **Time:** 🔴 `$O(n^2)$`
+  * 💾 **Space:** 🔴 `$O(n)$`
+* **[14] Hàm `CatalanVoidDeQuy` (Void + Đệ quy)**
+  * ⏱️ **Time:** 💀 `$O(4^n)$` *(Chạy bất khả thi với $n > 20$)*
+  * 💾 **Space:** 🔴 `$O(n)$`
+
+---
+
+## 📊 3. Bảng Tổng Hợp Đánh Giá (Summary)
+
+> **💡 Chú giải màu sắc:** > 🟢 **Tối ưu** | 🟡 **Chấp nhận được** | 🔴 **Chậm / Tốn bộ nhớ** | 💀 **Không nên dùng**
+
+| STT | Bài toán | Kiểu hàm | Kỹ thuật | Time ⏱️ | Space 💾 | Đánh giá chung |
+| :---: | :--- | :--- | :--- | :---: | :---: | :--- |
+| 1 | Tính Tổng | Trả về | Toán học | 🟢 $O(1)$ | 🟢 $O(1)$ | Rất Tốt |
+| 2 | Tính Tổng | Void | Toán học | 🟢 $O(1)$ | 🟢 $O(1)$ | Rất Tốt |
+| 3 | Giai Thừa | Trả về | Vòng lặp | 🟡 $O(n)$ | 🟢 $O(1)$ | Tốt |
+| 4 | Giai Thừa | Trả về | Đệ quy | 🟡 $O(n)$ | 🔴 $O(n)$ | Dễ tràn Stack |
+| 5 | Giai Thừa | Void | Vòng lặp | 🟡 $O(n)$ | 🟢 $O(1)$ | Tốt |
+| 6 | Giai Thừa | Void | Đệ quy | 🟡 $O(n)$ | 🔴 $O(n)$ | Dễ tràn Stack |
+| 7 | Fibonacci | Trả về | Vòng lặp | 🟡 $O(n)$ | 🟢 $O(1)$ | Tốt |
+| 8 | Fibonacci | Trả về | Đệ quy | 🔴 $O(2^n)$ | 🔴 $O(n)$ | Quá chậm |
+| 9 | Fibonacci | Void | Vòng lặp | 🟡 $O(n)$ | 🟢 $O(1)$ | Tốt |
+| 10 | Fibonacci | Void | Đệ quy | 🔴 $O(2^n)$ | 🔴 $O(n)$ | Quá chậm |
+| 11 | Catalan | Trả về | Vòng lặp | 🔴 $O(n^2)$ | 🔴 $O(n)$ | Tạm ổn |
+| 12 | Catalan | Trả về | Đệ quy | 💀 $O(4^n)$ | 🔴 $O(n)$ | Treo máy |
+| 13 | Catalan | Void | Vòng lặp | 🔴 $O(n^2)$ | 🔴 $O(n)$ | Tạm ổn |
+| 14 | Catalan | Void | Đệ quy | 💀 $O(4^n)$ | 🔴 $O(n)$ | Treo máy |
+
+---
+*✍️ Báo cáo được thực hiện nhằm mục đích phân tích và tối ưu hóa giải thuật trong C++.*
