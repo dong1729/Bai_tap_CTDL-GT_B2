@@ -1,6 +1,7 @@
 # 🚀 BÁO CÁO TÍNH ĐỘ PHỨC TẠP GIẢI THUẬT
 
 > **THÔNG TIN SINH VIÊN**
+> 
 > 👨‍💻 **Họ và tên:** Nguyễn Hòa Đông  
 > 📚 **Môn học:** Cấu trúc Dữ liệu và Giải thuật  
 > 📝 **Bài tập:** Về nhà số 1 (Đánh giá hàm, Vòng lặp & Đệ quy)
